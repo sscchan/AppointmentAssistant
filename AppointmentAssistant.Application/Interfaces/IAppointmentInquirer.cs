@@ -8,6 +8,6 @@ namespace AppointmentAssistant.Application.Interfaces
 {
     public interface IAppointmentInquirer
     {
-        public Task<DateTime> GetNextAvailableAppointment();
+        public Task<DateTime?> GetNextAvailableAppointment();
     }
 }
