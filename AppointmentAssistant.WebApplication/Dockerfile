@@ -1,6 +1,8 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+# The service requires browsers to be installed for playwright .NET to work.
+# This playwright docker image contains the required browsers already pre-installed.
+FROM mcr.microsoft.com/playwright/dotnet:v1.46.0-jammy AS base
 USER app
 WORKDIR /app
 EXPOSE 8080
