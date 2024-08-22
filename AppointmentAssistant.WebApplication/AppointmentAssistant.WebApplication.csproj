@@ -7,6 +7,7 @@
     <UserSecretsId>43144966-533e-4d33-ab28-6ff65a50f6f8</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<PlaywrightPlatform>all</PlaywrightPlatform>
+	<DockerFileTag>appointmentassistant</DockerFileTag>
   </PropertyGroup>
 
   <ItemGroup>
