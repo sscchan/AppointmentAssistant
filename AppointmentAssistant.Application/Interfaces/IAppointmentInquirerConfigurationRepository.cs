@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AppointmentAssistant.Application.Interfaces
 {
-    public interface IAppointmentInquirer
+    public interface IAppointmentInquirerConfigurationRepository
     {
-        public Task<DateTime?> GetNextAvailableAppointment(AppointmentInquirerConfiguration appointmentInquirerInput);
+        public Task<IList<AppointmentInquirerConfiguration>> GetAll();
     }
 }
