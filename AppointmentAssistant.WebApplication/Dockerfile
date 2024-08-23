@@ -24,4 +24,11 @@ RUN dotnet publish "./AppointmentAssistant.WebApplication.csproj" -c $BUILD_CONF
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Provide application user with permissions to the /app folder
+# See: https://github.com/microsoft/playwright-dotnet/issues/2770
+USER root
+RUN chmod +x /app/.playwright/node/*/node
+USER app
+
 ENTRYPOINT ["dotnet", "AppointmentAssistant.WebApplication.dll"]
